@@ -114,7 +114,7 @@ npm run android
 
 ## React Native Example App
 
-- Open the example app that uses the defined flutter package in the [`example/`](example) folder
+- Open the example app that uses the defined react native package in the [`example/`](example) folder
 
     ```sh
     cd example
