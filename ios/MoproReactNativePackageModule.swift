@@ -1,5 +1,4 @@
 import ExpoModulesCore
-import moproFFI
 
 // Modify generateProof to return the full CircomProofResult structure directly
 // Expo Modules should handle the serialization of the moproFFI.CircomProofResult struct
