@@ -3,8 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "mopro-react-native-package": ["../src/index"],
-      "mopro-react-native-package/*": ["../src/*"]
+      "mopro-ffi": ["../src/index"],
+      "mopro-ffi/*": ["../src/*"]
     }
   }
 }

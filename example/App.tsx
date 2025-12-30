@@ -1,9 +1,11 @@
 import { Image, StyleSheet, Button, TextInput, View, Text } from "react-native";
 
-import MoproReactNativePackage, {
-    Result,
+import {
+    generateCircomProof,
+    verifyCircomProof,
     CircomProofResult,
-} from "mopro-react-native-package";
+    ProofLib,
+} from "mopro-ffi";
 import * as FileSystem from "expo-file-system";
 import { useState } from "react";
 
@@ -67,9 +69,10 @@ export default function HomeScreen() {
                 b: [b],
             };
 
-            const res = await MoproReactNativePackage.generateCircomProof(
+            const res = await generateCircomProof(
                 zkeyFilePath.replace("file://", ""),
-                JSON.stringify(circuitInputs)
+                JSON.stringify(circuitInputs),
+                ProofLib.Arkworks
             );
 
             if (!res || typeof res !== 'object' || res === null) {
@@ -100,9 +103,10 @@ export default function HomeScreen() {
         setVerificationResult("Verifying...");
 
         try {
-            const isValid = await MoproReactNativePackage.verifyProof(
+            const isValid = await verifyCircomProof(
                 zkeyFilePath.replace("file://", ""),
-                fullProofResult
+                fullProofResult,
+                ProofLib.Arkworks
             );
             console.log("Verification result:", isValid);
             setVerificationResult(`Verification ${isValid ? "Successful" : "Failed"}`);

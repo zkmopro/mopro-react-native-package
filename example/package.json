@@ -11,8 +11,10 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~52.0.43",
+    "expo": "~52.0.44",
+    "mopro-ffi": "file:../",
     "react": "18.3.1",
+    "react-is": "^19.2.3",
     "react-native": "0.76.9"
   },
   "devDependencies": {
